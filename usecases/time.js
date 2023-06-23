@@ -6,8 +6,8 @@ export const useCurrentTime = () => {
   const [colon, setColon] = useState(":");
   setInterval(() => {
     setNow(dayjs());
-    setColon(colon === ":" ? "" : ":");
   }, 1000);
+  setInterval(() => setColon(colon === ":" ? " " : ":"), 4000);
   const date = now.format("DD/MM/YYYY");
   const hour = now.format("HH");
   const minute = now.format("mm");
