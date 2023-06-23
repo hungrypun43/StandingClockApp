@@ -1,8 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import { useCurrentTime } from "./usecases/time";
+
 import { QueryClient, QueryClientProvider } from "react-query";
+import { useKeepAwake } from "expo-keep-awake";
 
 export default function App() {
+  useKeepAwake();
   const { date, weekDay, hour, minute, colon } = useCurrentTime();
   return (
     <View style={styles.container}>
