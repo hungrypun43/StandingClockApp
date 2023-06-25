@@ -3,15 +3,19 @@ import { useCurrentTime } from "./usecases/time";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { useKeepAwake } from "expo-keep-awake";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   useKeepAwake();
-  const { date, weekDay, hour, minute, colon } = useCurrentTime();
+  const { date, weekDay, hour, minute } = useCurrentTime();
   return (
-    <View style={styles.container}>
-      <Text style={styles.date}>{`${weekDay}, ${date}`}</Text>
-      <Text style={styles.time}>{`${hour}${colon}${minute}`}</Text>
-    </View>
+    <>
+      <StatusBar style="dark" />
+      <View style={styles.container}>
+        <Text style={styles.date}>{`${weekDay}, ${date}`}</Text>
+        <Text style={styles.time}>{`${hour}:${minute}`}</Text>
+      </View>
+    </>
   );
 }
 

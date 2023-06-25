@@ -18,13 +18,14 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#000000"
       },
       "androidStatusBar": {
+        "backgroundColor": "#000000",
         "hidden": true
       },
       "androidNavigationBar": {
-        "visible": false
+        "visible": "immersive"
       },
       "package": "com.pun_thanick.StandingClockApp"
     },
